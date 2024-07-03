@@ -10,6 +10,9 @@ import { ShipComponent } from './pages/ship/ship.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
+import { SearchMoviesComponent } from './shared/components/search-movies/search-movies.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,17 @@ import { MatTableModule } from '@angular/material/table';
     HomeComponent,
     MoviesComponent,
     ShipComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchMoviesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

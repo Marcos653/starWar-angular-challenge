@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Movie, RespostaAPI } from './types/interface';
 
 @Injectable({
@@ -11,7 +11,9 @@ export class MoviesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getMovies(): Observable<RespostaAPI<Movie>> {
-    return this.httpClient.get<RespostaAPI<Movie>>(this.apiUrl);
+  getMovies(query: string = ''): Observable<Movie[]> {
+    return this.httpClient.get<RespostaAPI<Movie>>(`${this.apiUrl}?search=${query}`)
+    .pipe(map(response => response.results)
+    );
   }
 }

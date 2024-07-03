@@ -1,0 +1,8 @@
+<div class="search-container">
+    <form (ngSubmit)="searchMovies()">
+      <input type="text" [(ngModel)]="searchQuery" name="search" placeholder="Search movies..." required>
+      <button type="submit">Search</button>
+    </form>
+  
+    <div *ngIf="isLoading" class="loading-indicator">Loading...</div>
+</div>

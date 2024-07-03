@@ -1,4 +1,6 @@
 <div class="mat-elevation-z8">
+    <app-search-movies (searchResults)="handleSearchResults($event)"></app-search-movies>
+
     <table mat-table [dataSource]="movies" class="mat-elevation-z8">
   
       <ng-container matColumnDef="title">

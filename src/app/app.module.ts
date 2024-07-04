@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { SearchMoviesComponent } from './shared/components/search-movies/search-movies.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SearchShipsComponent } from './shared/components/search-ships/search-ships.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MoviesComponent,
     ShipComponent,
     HeaderComponent,
-    SearchMoviesComponent
+    SearchMoviesComponent,
+    SearchShipsComponent
   ],
   imports: [
     BrowserModule,

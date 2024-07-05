@@ -9,19 +9,32 @@ import { Ship } from 'src/app/service/types/interface';
 })
 export class ShipComponent {
   public ships: Ship[] = [];
+  public totalShips = 0;
+  public currentPage = 1;
+  public pageSize = 0;
 
   constructor(private shipService: ShipService) { }
 
   ngOnInit(): void {
-    this.shipService.getShips()
-    .subscribe(ships => {
-      this.ships = ships;
+    this.fetchShips();
+  }
+
+  fetchShips(page: number = 1): void {
+    this.shipService.getShips('', page)
+    .subscribe(response => {
+      this.ships = response.results;
+      this.totalShips = response.count;
+      this.pageSize = response.results.length;
       console.log(this.ships);
     });
   }
 
-
   handleSearchResults(results: Ship[]): void {
-    this.ships = results;
+    this.ships = results; 
+  }
+
+  handlePageChange(event: any): void {
+    this.currentPage = event.pageIndex + 1;
+    this.fetchShips(this.currentPage);
   }
 }

@@ -11,9 +11,8 @@ export class ShipService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getShips(query: string = ''): Observable<Ship[]> {
-    return this.httpClient.get<RespostaAPI<Ship>>(`${this.apiUrl}/starships?search=${query}`)
-    .pipe(map(response => response.results)
-    );
+  getShips(query: string = '', page: number = 1): Observable<RespostaAPI<Ship>> {
+    return this.httpClient.get<RespostaAPI<Ship>>(`${this.apiUrl}/starships?search=${query}&page=${page}`)
+    .pipe(map(response => response));
   }
 }

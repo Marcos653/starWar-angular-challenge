@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchMoviesComponent } from './shared/components/search-movies/search-movies.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchShipsComponent } from './shared/components/search-ships/search-ships.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SearchShipsComponent } from './shared/components/search-ships/search-sh
     HttpClientModule,
     MatTableModule,
     FormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

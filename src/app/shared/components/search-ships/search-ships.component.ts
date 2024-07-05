@@ -32,7 +32,7 @@ export class SearchShipsComponent {
         throw error;
       })
     ).subscribe(ships => {
-      this.ships = ships;
+      this.ships = ships.results;
       this.isLoading = false;
       this.searchResults.emit(this.ships);
     });

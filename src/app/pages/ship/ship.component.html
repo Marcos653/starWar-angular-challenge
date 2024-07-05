@@ -1,19 +1,27 @@
 <div class="mat-elevation-z8">
-    <app-search-ships (searchResults)="handleSearchResults($event)"></app-search-ships>
+  <app-search-ships (searchResults)="handleSearchResults($event)"></app-search-ships>
 
-    <table mat-table [dataSource]="ships" class="mat-elevation-z8">
-  
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let ship"> {{ship.name}} </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="model">
-        <th mat-header-cell *matHeaderCellDef> Model </th>
-        <td mat-cell *matCellDef="let ship"> {{ship.model}} </td>
-      </ng-container>
+  <table mat-table [dataSource]="ships" class="mat-elevation-z8">
 
-      <tr mat-header-row *matHeaderRowDef="['name', 'model']"></tr>
-      <tr mat-row *matRowDef="let row; columns: ['name', 'model'];"></tr>
-    </table>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let ship"> {{ship.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef> Model </th>
+      <td mat-cell *matCellDef="let ship"> {{ship.model}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name', 'model']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'model'];"></tr>
+  </table>
+
+  <mat-paginator [length]="totalShips"
+    [pageSize]="10"
+    hidePageSize="true"
+    [showFirstLastButtons]="true"
+    (page)="handlePageChange($event)">
+  </mat-paginator>
+
 </div>

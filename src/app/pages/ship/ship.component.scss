@@ -16,20 +16,27 @@
             color: #ccc;
             padding: 12px 20px;
             text-align: left;
+            transition: background-color 0.3s ease;
 
             &:not(:last-child) {
                 border-right: 1px solid #2c2c2c;
             }
         }
 
-        th {
-            background-color: #262626;
-            font-weight: bold;
-        }
+        tr {
+            cursor: pointer;
 
-        tr:nth-child(even) {
-            background-color: #2a2a2a;
-        }
+            &:hover {
+                background-color: #323232;
+            }
+
+            &:nth-child(even) {
+                background-color: #2a2a2a;
+                
+                &:hover {
+                    background-color: #323232;
+                }
+            }
     }
 
     mat-paginator {
@@ -38,4 +45,5 @@
         align-items: center;
         width: 100%;
       }
+    }
 }

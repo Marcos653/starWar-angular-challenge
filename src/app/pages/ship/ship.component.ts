@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ShipService } from 'src/app/service/ship.service';
 import { Ship } from 'src/app/service/types/interface';
+import { ShipDetailComponent } from 'src/app/shared/components/ship-detail/ship-detail.component';
 
 @Component({
   selector: 'app-ship',
@@ -13,7 +15,7 @@ export class ShipComponent {
   public currentPage = 1;
   public pageSize = 0;
 
-  constructor(private shipService: ShipService) { }
+  constructor(private shipService: ShipService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.fetchShips();
@@ -36,5 +38,12 @@ export class ShipComponent {
   handlePageChange(event: any): void {
     this.currentPage = event.pageIndex + 1;
     this.fetchShips(this.currentPage);
+  }
+
+  openDialog(ship: any): void {
+    this.dialog.open(ShipDetailComponent, {
+      width: '250px',
+      data: ship
+    });
   }
 }

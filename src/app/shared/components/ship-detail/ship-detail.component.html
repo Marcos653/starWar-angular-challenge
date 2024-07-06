@@ -1,0 +1,15 @@
+<mat-dialog-content>
+    <h2>{{ data.name }}</h2>
+    <dl>
+      <dt>Modelo:</dt>
+      <dd>{{ data.model }}</dd>
+      <dt>Fabricante:</dt>
+      <dd>{{ data.manufacturer }}</dd>
+      <dt>Custo em Créditos:</dt>
+      <dd>{{ data.cost_in_credits }}</dd>
+    </dl>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button #closeButton mat-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>

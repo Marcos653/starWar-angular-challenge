@@ -1,0 +1,40 @@
+mat-dialog-content {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin: 0;
+  }
+  
+  dt {
+    font-weight: bold;
+  }
+  
+  dd {
+    margin: 0;
+  }
+  
+  mat-dialog-actions {
+    margin-right: 20px;
+  }
+  
+  button {
+    color: #fff;
+    background-color: #666;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #555;
+ }
+  

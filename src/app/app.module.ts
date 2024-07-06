@@ -15,6 +15,8 @@ import { SearchMoviesComponent } from './shared/components/search-movies/search-
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchShipsComponent } from './shared/components/search-ships/search-ships.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ShipDetailComponent } from './shared/components/ship-detail/ship-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ShipComponent,
     HeaderComponent,
     SearchMoviesComponent,
-    SearchShipsComponent
+    SearchShipsComponent,
+    ShipDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     FormsModule,
     MatProgressSpinnerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
